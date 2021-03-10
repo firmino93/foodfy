@@ -1,21 +1,28 @@
-const modalOverlay = document.querySelector('.modal-overlay');
-const modal = document.querySelector('.modal');
-const cards = document.querySelectorAll('.card')
+const recipes = document.querySelectorAll(".content")
 
-const closeModal = document.querySelector('.close-modal').addEventListener("click", function() {
-  modal.classList.remove('active');
-  modalOverlay.classList.remove('active');
-})
-
-for (let card of cards) {
-    card.querySelector('img').addEventListener("click", function(){
-    modal.classList.add('active');
-    modalOverlay.classList.add('active');
-    modal.querySelector('.recipe-name p').innerHTML=card.
-    querySelector('h4').innerHTML;
-    modal.querySelector('.author-recipes p').innerHTML=card.
-    querySelector('p').innerHTML;
-    modal.querySelector('img').src=card.querySelector('img').src;
-    console.log(card);
+for(let i = 0; i < recipes.length; i++) {
+  recipes[i].addEventListener("click", function () {
+    window.location.href = `/recipes/${i}`
   })
+}
+
+const Content = document.querySelectorAll(".content")
+
+const buttons = document.querySelectorAll("button") 
+
+for (let [i,button] of buttons.entries()) {
+  
+  button.addEventListener("click", function() {
+      
+      if(Content[i].classList.contains("show")){
+          Content[i].classList.remove('show')
+          Content[i].classList.add('hide')
+          button.innerHTML= "MOSTRAR"
+      } else {
+          Content[i].classList.add('show')
+          Content[i].classList.remove('hide')
+          button.innerHTML= "ESCONDER"
+      }
+
+  })  
 }

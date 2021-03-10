@@ -218,3 +218,65 @@ footer {
 .modal.active {
     visibility: visible;
 }
+
+
+
+/* ===== PAGE RECIPES DETAILS ===== */
+
+.recipe_details {
+    padding-top: 56px;
+}
+
+.recipe_details img {
+    border-radius: 15px;
+    height: 280px;
+}
+
+.recipe_details_title {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.recipe_details .recipe_title {
+    font-size: 36px;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+
+.recipe_details .recipe_title_author {
+    font-size: 20px;
+    color: #777;
+    line-height: 24px;
+}
+
+.list_ingredients, .list_preparation, .list_information {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.recipes_hide-show button, .recipes_hide-show {
+    margin-left: 8px;
+    border: none;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.recipe_preparation, 
+.recipe_ingredients ul li, 
+.recipes_details_aditional_hide-show p {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444;
+}
+
+.recipes_details_aditional_hide-show {
+    margin-bottom: 50px;
+}
