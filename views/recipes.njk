@@ -8,7 +8,7 @@
     <div class="most_accessed">
         <div class="content">
             {% for recipe in recipes %}
-            <div class="card">
+            <div class="card" id="{{recipes.indexOf(recipes)}}">
                 <img src="{{recipe.image}}" alt="image de burger">
                 <h4>{{recipe.title}}</h4>
                 <p>por {{recipe.author}}</p>
@@ -17,23 +17,4 @@
         </div>
     </div>
 </div>
-<footer>
-    Todos direitos reservados, receitas Foodfy.
-</footer>
-<div class="modal-overlay"></div>
-<div class="modal">
-    <div class="img-recipes">
-        <img src="assets/burger.png" alt="imagem de burger">
-    </div>
-    <div class="recipe-name">
-        <p>Triplo burger bacon</p>
-    </div>
-    <div class="author-recipes">
-        <p>por Jorge Relato</p>
-    </div>
-    <button class="close-modal">
-        <p>fechar modal</p>
-    </button>
-</div>
-<script src="scripts.js"></script>
 {% endblock %}

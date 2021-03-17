@@ -1,61 +1,60 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-
-<div class="recipe_details">
+  <div class="container-recipe-details">
     <img src="{{recipe.image}}" alt="">
-    <div class="recipe_details_title">
-        <p class="recipe_title">{{recipe.title}}</p>
-        <p class="recipe_title_author">{{recipe.author}}</p>
+    <div class="recipes-details-title-container">
+      <p class="recipes-details-title">{{recipe.title}}</p>
+      <p class="recipes-details-title-author">por {{recipe.author}}</p>
     </div>
 
-    <div class="recipe_details_ingredients">
-        <div class="list_ingredients">
-            <p>Ingredients</p>
-            <div class="recipes_hide-show">
-                <button>ESCONDER</button>
-            </div>
+    <div class="recipes-details-ingredients-container">
+      <div class="recipes-details-ingredients-title">
+        <p>Ingredientes</p>
+        <div class="recipes-details-hide-show">
+          <button>ESCONDER</button>
         </div>
-    </div>
-    <div class="recipe_ingredients show content">
+      </div>
+
+      <div class="recipes-details-ingredients show content">
         <ul>
-            {% for ingredient in recipe.ingredients %}
-            <li>{{ingredient}}</li>
-            {% endfor %}
+          {% for ingredient in recipe.ingredients %}
+          <li>
+            {{ingredient}}
+          </li>
+          {% endfor %}
         </ul>
-    </div>
+      </div>
 
-    <div class="recipe_details_preparation">
-        <div class="list_preparation">
-            <p>Modo De Preparo</p>
-            <div class="recipes_hide-show">
-                <button>ESCONDER</button>
-            </div>
+      <div class="recipes-details-preparation-title">
+        <p>Modo de preparo</p>
+        <div class="recipes-details-hide-show">
+          <button>ESCONDER</button>
         </div>
-    </div>
-    <div class="recipe_preparation show content ">
+      </div>
+
+      <div class="recipes-details-preparation show content">
         <ul>
-            {% for preparation in recipe.preparation %}
-            <li>{{preparation}}</li>
-            {% endfor %}
+          {% for ingredient in recipe.ingredients %}
+          <li>
+            {{ingredient}}
+          </li>
+          {% endfor %}
         </ul>
-    </div>
+      </div>
 
-    <div class="recipe_aditional">
-        <div class="list_information">
-            <p>Informaçoes Adicionais</p>
-            <div class="recipes_hide-show">
-                <button>ESCONDER</button>
-            </div>
+      <div class="recipes-details-additional-information">
+        <p>Informações adicionais</p>
+        <div class="recipes-details-hide-show">
+          <button>ESCONDER</button>
         </div>
-       
-        <div class="recipes_details_aditional_hide-show">
-            <p>{{recipe.information}}</p>
-        </div>
+      </div>
+
+      <div class="recipes-details-additional-information-description show content">
+        <p>
+          {{recipe.information}}
+        </p>
+      </div>
     </div>
-
-</div>
-
-<script src="scripts.js"></script>    
-
+  </div>
 {% endblock %}
