@@ -1,110 +1,135 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-* {
+*{
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 body {
-  background-color: #fff;
-  font-family: "Roboto", sans-serif;
+  background-color: white;  
+  font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
-  width: 940px;
+  max-width: 940px;
   margin: 0 auto;
 }
 
-header {
-  margin: 32px auto;
-  display: grid;
-  grid-template-columns: 210px 1fr;
+.menu {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
 .menu a {
-  font-size: 16px;
-  line-height: 26px;
-  color: #111;
-  text-decoration: none;
-  margin-right: 30px;
+ padding-top: 38px;
+ padding-right: 30px; 
+ font-weight: normal;
+ font-size: 16px;
+ text-decoration: none;
+ color: black;
 }
 
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.menu img{
+  /* padding-top: 36.1px;
+  padding-right: 122.4px; */
+  width: 90.6px;
+  height: 26.9px;
+}
 
-  background: #fbdfdb;
+.chef {
+  width: 940px;
+  height: 366px;
+  margin-top: 36px;
+  border: 1px solid #FBDFDB;
+  background-color: #FBDFDB;
   border-radius: 30px;
 }
 
-.hero .intro {
-  align-self: center;
-  width: 316px;
-  padding-left: 66px;
-}
-
-.hero .intro h1 {
-  font-size: 32px;
-  line-height: 38px;
-  color: #111;
-}
-
-.hero img {
-  justify-self: center;
+.chef img {
+  float: right;
+  padding-right: 100px;
   padding-top: 66px;
 }
 
-.hero .intro p {
-  color: rgba(0, 0, 0, 0.7);
+.chef .text-chef {
+  display: block;
+}
+
+.chef .text-chef h2 {
+  font-size: 32px;
+  max-width: 305px;
+  max-height: 38px;
+  margin-right: 117px;
+  margin-bottom: 10px;
+  margin-top: 117px;
+  margin-left: 60px;
+}
+
+.chef .text-chef p {
   font-size: 18px;
-  line-height: 28px;
+  font-weight: normal;
+  max-width: 316px;
+  max-height: 84px;
+  margin-right: 564px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  opacity: 0.7;
 }
 
-.most_accessed {
-  margin: 50px 0;
+.most-acess .text {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.most_accessed h2 {
-  font-size: 24px;
-  line-height: 28px;
-  color: #111;
-  margin-bottom: 20px;
+.most-acess img {
+  border-radius: 15px;
+  width: 300px;
+  height: 140px;
 }
 
-.most_accessed .content {
+.most-acess h3 {
+  font-weight: normal;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.most-acess h5 {
+  font-weight: normal;
+  color: #777777;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+.recipes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 
-.most_accessed .content img {
+.footer {
+  background-color: #EEEEEE;
   width: 100%;
-  border-radius: 15px;
-  margin-bottom: 20px;
+  height: 60px;
 }
 
-.most_accessed .content h4 {
-  font-size: 18px;
-  line-height: 21px;
-  color: #111;
-  margin-bottom: 5px;
-}
-
-.most_accessed .content p {
+.footer p {
   font-size: 14px;
-  color: #777;
-}
-
-footer {
-  background-color: #eee;
-  padding: 23px 0;
-  font-size: 14px;
-  color: #999;
+  color: #999999;
   text-align: center;
+  padding-top: 23px;
 }
 
-/* ====================== PAGE ABOUT ========*/
+/* PÁGINA SOBRE */
+
+.logo-sobre img {
+  padding: 0;
+  margin-right: 120px;
+}
 
 .about {
   padding-top: 50px;
@@ -112,43 +137,85 @@ footer {
 
 .about h2 {
   font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.about p {
-  font-size: 18px;
-  line-height: 28px;
-  color: #444;
-  margin-bottom: 27px;
 }
 
 .history h2 {
   font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+}
+
+.recipes-text h2 {
+  font-size: 20px;
+}
+
+.about p {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
 }
 
 .history p {
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 18px;
+  color: #444444;
   line-height: 28px;
-  color: #444;
-  margin-bottom: 27px;
 }
 
-.recipe-text h2 {
+.recipes-text p {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
+}
+
+/* RECEITAS */
+
+.recipes-page {
+  padding-top: 56px;
+}
+
+.recipes-page .text {
+  padding-top: 50px;
+  padding-bottom: 20px;
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-.recipe-text p {
+.recipes-page img {
+  border-radius: 15px;
+  width: 300px;
+  height: 140px;
+}
+
+.recipes-page h3 {
+  font-weight: normal;
   font-size: 18px;
-  line-height: 28px;
-  color: #444;
-  margin-bottom: 50px;
+  padding-top: 20px;
 }
 
-/* ============= MODAL ========== */
+.recipes-page h5 {
+  font-weight: normal;
+  color: #777777;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.recipes-grid a {
+  text-decoration: none;
+  color: black;
+}
+
+/* MODAL */
 
 .modal-overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -161,13 +228,13 @@ footer {
 }
 
 .modal {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 16px;
   width: 660px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   padding: 30px;
   margin: 0 auto;
   visibility: hidden;
@@ -187,9 +254,10 @@ footer {
   height: 200px;
   border-radius: 15px;
   object-fit: cover;
+
 }
 
-.modal .recipe-name {
+.modal .name-recipes {
   font-size: 24px;
   text-align: center;
   margin-top: 20px;
@@ -202,7 +270,7 @@ footer {
   margin-top: 5px;
 }
 
-/* =========== MODAL ACTIVE ========= */
+/* MODAL ACTIVE */
 
 .modal-overlay.active {
   opacity: 1;
@@ -213,7 +281,7 @@ footer {
   visibility: visible;
 }
 
-/* ===== PAGE RECIPES DETAILS ===== */
+/* PÁGINA DE DETALHES DAS RECEITAS */
 
 .container-recipe-details {
   padding-top: 56px;
@@ -239,18 +307,16 @@ footer {
   font-size: 20;
 }
 
-.recipes-details-ingredients-title,
-.recipes-details-preparation-title {
+.recipes-details-ingredients-title, .recipes-details-preparation-title  {
   font-size: 24px;
   font-weight: bold;
   display: flex;
   align-items: flex-end;
   padding-top: 50px;
   padding-bottom: 20px;
-}
+} 
 
-.recipes-details-ingredients,
-.recipes-details-preparation {
+.recipes-details-ingredients, .recipes-details-preparation  {
   font-size: 18px;
   color: #444444;
   line-height: 28px;
@@ -284,10 +350,10 @@ footer {
   background: none;
 }
 
-.hide {
+.hide{
   display: none;
 }
 
-.show {
+.show{
   display: block;
 }

@@ -1,38 +1,38 @@
-const express = require('express')
-const nunjucks = require('nunjucks')
-const data = require('./data') 
+const express = require("express");
+const nunjucks = require("nunjucks");
 
-const server = express() 
- 
-server.use(express.static("public"))  
-  
-server.set("view engine", "njk")  
+const server = express();
+const data = require("./data")
 
-nunjucks.configure("views", {     
-    express: server,  
-    noCache: true,
-    autoescape: false
+server.use(express.static('public'));
+
+server.set("view engine", "njk");
+
+nunjucks.configure("views", {
+  express:server,
+  autoescape: false,
+  noCache: true
 })
 
-server.get("/", function (req, res) {
-    return res.render("index", {recipes: data})
+server.get("/", function(req, res) {
+  return res.render("index", {data});
 })
- 
-server.get("/about", function (req, res) {  
-    return res.render("about")
-}) 
 
-server.get("/recipes", function (req, res) {
-    return res.render("recipes", {recipes: data})
+server.get("/receitas", function(req, res) {
+  return res.render("receitas", {recipes: data});
 })
- 
+
 server.get("/recipes/:index", function (req, res) {
-    const recipes = data
-    const recipeIndex = req.params.index
+  const recipes = data // Array de receitas carregadas do data.js
+  const recipeIndex = req.params.index;
 
-    return res.render("recipe", {recipe: recipes[recipeIndex]})
+  return res.render("recipes", {recipe: recipes[recipeIndex]})
 })
 
-server.listen(3333, function () {
-    console.log("server is running")
+server.get("/sobre", function(req, res) {
+  return res.render("sobre", {data});
+})
+
+server.listen(5000, function(){
+  console.log("Server is running...🚀") 
 })

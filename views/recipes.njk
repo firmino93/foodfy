@@ -1,20 +1,82 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-<title>Receitas | Foodfy</title>
+  <title>Detalhes das Receitas</title>
 {% endblock %}
 
 {% block content %}
-    <div class="most_accessed">
-        <div class="content">
-            {% for recipe in recipes %}
-            <div class="card" id="{{recipes.indexOf(recipes)}}">
-                <img src="{{recipe.image}}" alt="image de burger">
-                <h4>{{recipe.title}}</h4>
-                <p>por {{recipe.author}}</p>
-            </div>
-            {% endfor %}
-        </div>
+
+  <div class="container-recipe-details">
+
+    <img src="{{recipe.image}}" alt="">
+
+    <div class="recipes-details-title-container">
+
+      <p class="recipes-details-title">{{recipe.title}}</p>
+
+      <p class="recipes-details-title-author">por {{recipe.author}}</p>
+
     </div>
-</div>
+
+    <div class="recipes-details-ingredients-container">
+
+      <div class="recipes-details-ingredients-title">
+        <p>Ingredientes</p>
+
+        <div class="recipes-details-hide-show">
+          <button>ESCONDER</button>
+        </div>
+      </div>
+
+      <div class="recipes-details-ingredients show content">
+        <ul>
+          {% for ingredient in recipe.ingredients %}
+          <li>
+            {{ingredient}}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="recipes-details-preparation-title">
+
+        <p>Modo de preparo</p>
+        <div class="recipes-details-hide-show">
+          <button>ESCONDER</button>
+        </div>
+
+      </div>
+
+      <div class="recipes-details-preparation show content">
+        <ul>
+          {% for ingredient in recipe.ingredients %}
+          <li>
+            {{ingredient}}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="recipes-details-additional-information">
+        <p>Informações adicionais</p>
+
+        <div class="recipes-details-hide-show">
+          <button>ESCONDER</button>
+        </div>
+      </div>
+
+      <div class="recipes-details-additional-information-description show content">
+
+        <p>
+          {{recipe.information}}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/script.js"></script>
+
 {% endblock %}
