@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #111;
+  width: 100%;
+  padding: 26px;
+}
+
+.menu {
+  margin-left: 198px;
+}
+
+
+/* = PAGE INDEX RECIPES =*/
+
+h1 {
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.container_recipes {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 39px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+}
+
+.card_image img {
+  width: 172px;
+  height: 80px;
+  border-radius: 8.75px;
+}
+
+.card_recipes h2 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.card_recipes p {
+  font-size: 14px;
+  color: #777;
+}
+
+.card_recipes span a {
+  font-size: 14px;
+  color: #6558C3;
+  text-decoration: none;
+}
