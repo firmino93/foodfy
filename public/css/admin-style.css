@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+:root {
+  --color-black: #111;
+  --color-gray: #777;
+  --color-blue: #6558C3;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -69,4 +75,57 @@ h1 {
   font-size: 14px;
   color: #6558C3;
   text-decoration: none;
+}
+
+
+
+/* == PAGE CREATE RECIPES == */
+
+form .header_form h1 {
+  margin-bottom: 55px;
+  font-size: 24px;
+}
+
+form .header_form button {
+  float: right;
+  padding: 8px 20px;
+  background-color: var(--color-blue);
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form .item div:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+form .item input {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+form .item button[type="button"] {
+  font-size: 16px;
+  background-color: none;
+  color: var(--color-blue);
+  font-weight: bold;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+form .item textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
 }
