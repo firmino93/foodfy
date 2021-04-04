@@ -1,19 +1,45 @@
-{% extends "./layout.njk" %}
-
+{% extends 'admin.njk' %}
 {% block content %}
-<div class="container">
-    <div class="form-header">
-      <h2>{{ pageTitle }}</h2>
-      <button type="submit" form="post">Salvar receita</button>
-    </div>
-    <form method="POST" action="/admin/recipes" id="post">
-      {% include "admin/fields.njk" %}
+  <div class="recipeList">
+    <form class="recipe" method="POST" action="/admin/recipes">
+      <div class="detailRecipeHead">
+        <h2>Criando receita</h2>
+        <button type="submit">Salvar receita</button>
+      </div>
+      <div class="formRecipes">
+        <div class="itemRecipe">
+          <div>Nome da Receita</div>
+          <input type="text" name="title">
+        </div>
+        <div class="itemRecipe">
+          <div class="item_title">Imagem da receita</div>
+          <input type="url" name="image" placeholder="https://">
+        </div>
+        <div class="itemRecipe">
+          <div class="item_title">Ingredientes</div>
+          <div id="ingredients">
+            <div class="ingredient">
+              <input type="text" name="ingredients[]" placeholder="Adicione os ingredientes separadamente">
+            </div>
+          </div>
+          <span class="add_ingredient">
+            Adicionar novo ingrediente</span>
+        </div>
+        <div class="itemRecipe">
+          <div class="item_title">Modo de preparo</div>
+          <div id="preparation">
+            <div class="passo">
+              <input type="text" name="preparation[]" placeholder="Adicione os passos separadamente">
+            </div>
+          </div>
+          <span class="add_passo">
+            Adicionar novo passo</span>
+        </div>
+        <div class="itemRecipe">
+          <div class="item_title">Informações adicionais</div>
+          <textarea name="information"></textarea>
+        </div>
+      </div>
     </form>
-
-    {% block script %} 
-      <script src="/add-script.js"></script>
-    {% endblock %}
-
-</div>
-
+  </div>
 {% endblock content %}

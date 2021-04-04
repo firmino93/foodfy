@@ -1,35 +1,33 @@
-{% extends "./layout.njk" %}    
-    
+{% extends 'admin.njk' %}
+
 {% block content %}
-
-<div class="manag_recipes">
+  <main class="recipesListAdmin">
+    <div class="detailRecipeHead">
       <h2>Gerenciar receitas</h2>
-      <a href="/admin/recipes/create" >Nova receita</a>
-</div>
-
-<div id="manager_recipes">
-
-  <div class="cards">
-  
-          {% for recipe in recipes %}
-            
-              <div class="card">
-                <div class="card__image">
-                  <img src="{{recipe.image}}" alt="{{recipe.title}}">
-                </div>
-                <div class="card_text">
-                  <div class="card__title">
-                    <p>{{recipe.title}}</p>
-                  </div>
-                  <div class="card__author">
-                    <p>por {{recipe.author}}</p>
-                  </div>
-                  <a href="/admin/recipes/{{recipe.id}}" >Visualizar</a>
-                </div>
-              </div>
-            
-          {%endfor%}
+      <a href="recipes/create">Criar nova receita</a>
+    </div>
+  <div class="block_recipes">
+  {% for item in items %}
+    <div id="{{items.indexOf(item)}}" class="block">
+    <div class="gridImg">  
+      <div class="block_img">
+        <img src="{{item.image}}" alt="{{item.title}}">
+      </div>
+    </div> 
+    <div class="gridDetail"> 
+      <div class="block_title">
+        <h2>{{item.title}}</h2>
+      </div>
+      <div class="block_author">
+        <p>
+          por
+          {{item.author}}</p>
+      </div>
+      <div>
+        <a href="recipes/{{items.indexOf(item)}}">Vizualizar</a>
+      </div>
+    </div>  
+    </div>
+  {% endfor %}
   </div>
-</div>
-    
 {% endblock content %}
