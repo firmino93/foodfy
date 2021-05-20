@@ -1,39 +1,50 @@
-function addIngredient() {
-  const ingredients = document.querySelector("#ingredients");
-  const containerField = document.querySelectorAll(".ingredient");
-  const newField = containerField[containerField.length - 1].cloneNode(true);
-  console.log(ingredients)
-  console.log(containerField)
-  console.log(newField)
-  if (newField.children[0].value == "") return false;
-  newField.children[0].value = "";
-  ingredients.appendChild(newField);
+const buttons = document.querySelectorAll(".show-hide")
+
+for(let button of buttons) {
+    const subtitles = button.querySelectorAll("h2")
+    for(let subtitle of subtitles) {
+        subtitle.addEventListener("click", function() {
+            if(button.classList.contains("remove")) {
+                button.classList.add("active")
+                button.classList.remove("remove")
+                subtitle.innerHTML = "ESCONDER"
+            }else if(button.classList.contains("active")) {
+                button.classList.add("remove")
+                button.classList.remove("active")
+               subtitle.innerHTML = "MOSTRAR"
+            }
+        })
+    }
 }
 
-document
-  .querySelector(".add_ingredient")
-  .addEventListener("click", addIngredient);
-
-  function addPasso() {
-    const preparation = document.querySelector("#preparation");
-    const containerField = document.querySelectorAll(".passo");
-    const newField = containerField[containerField.length - 1].cloneNode(true);
+function addIngredient() {
+    const ingredients = document.querySelector("#ingredients");
+    const fieldContainer = document.querySelectorAll(".ingredient");
+  
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
   
     if (newField.children[0].value == "") return false;
+  
     newField.children[0].value = "";
-    preparation.appendChild(newField);
+    ingredients.appendChild(newField);
   }
   
-  document
-    .querySelector(".add_passo")
-    .addEventListener("click", addPasso);
+document
+.querySelector(".add-ingredient")
+.addEventListener("click", addIngredient) ;
+
+function addPrepare() {
+    const prepare = document.querySelector("#prepare");
+    const fieldContainer = document.querySelectorAll(".prepare");
   
-const modalContent = document.querySelector(".modal_content")
-document.querySelector(".btn_deletar_modal").addEventListener("click",()=>{
-  modalContent.classList.add('activ')
-})
-
-const btncalcel = document.querySelector(".btn_cancelar").addEventListener("click", ()=>{
-  modalContent.classList.remove('activ')
-})
-
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+  
+    if (newField.children[0].value == "") return false;
+  
+    newField.children[0].value = "";
+    prepare.appendChild(newField);
+  }
+  
+document
+.querySelector(".add-prepare")
+.addEventListener("click", addPrepare) ;

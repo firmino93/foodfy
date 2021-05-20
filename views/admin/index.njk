@@ -1,33 +1,34 @@
-{% extends 'admin.njk' %}
+{% extends "./layout.njk" %}
+
+{% block head %}
+    <title>Admin - Foodfy</title>
+{% endblock %}
 
 {% block content %}
-  <main class="recipesListAdmin">
-    <div class="detailRecipeHead">
-      <h2>Gerenciar receitas</h2>
-      <a href="recipes/create">Criar nova receita</a>
-    </div>
-  <div class="block_recipes">
-  {% for item in items %}
-    <div id="{{items.indexOf(item)}}" class="block">
-    <div class="gridImg">  
-      <div class="block_img">
-        <img src="{{item.image}}" alt="{{item.title}}">
-      </div>
-    </div> 
-    <div class="gridDetail"> 
-      <div class="block_title">
-        <h2>{{item.title}}</h2>
-      </div>
-      <div class="block_author">
-        <p>
-          por
-          {{item.author}}</p>
-      </div>
-      <div>
-        <a href="recipes/{{items.indexOf(item)}}">Vizualizar</a>
-      </div>
-    </div>  
-    </div>
-  {% endfor %}
-  </div>
-{% endblock content %}
+    <section id="section-admin">
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Gerenciar Receitas</h1>
+            <a href="/admin/create" id="admin-create-button">Criar receita</a>
+        </div>
+        <div class="receipts" id="receipts-admin">
+            {% for item in items %}
+                <article class="receipt" id="receipt-admin"> 
+                    <div class="receipt__image-container" id="receipt__admin-container">
+
+                        <img src="{{item.image}}" alt="Imagem de {{item.title}}"  id="receipt-img"  >
+                    
+                    </div>
+                    <div class="receipt__content" id="receipt__content-admin">
+
+                        <p class="receipt__content-receipt">{{item.title}}</p>
+                        <p class="receipt__content-chef">por {{item.author}}</p>
+                        <a href="/admin/{{item.id}}" class="receipt__content-see">Visualizar</a>
+
+                    </div>
+                    {% if item.recipeIndex %}
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
